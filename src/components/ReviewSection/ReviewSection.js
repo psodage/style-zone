@@ -53,64 +53,66 @@ const dummyReviews = [
 
 const ReviewSection = () => {
   return (
-    <div className="review-section">
-      <h2 className="section-title" style={{ marginBottom: 24 }}>CUSTOMER REVIEWS</h2>
+    <section className="review-section section-padding">
+      <div className="container">
+        <h2 className="section-title" style={{ marginBottom: 24 }}>CUSTOMER REVIEWS</h2>
 
-      <div className="review-section__grid">
-        {/* Rating Summary */}
-        <div className="review-section__summary">
-          <span className="review-section__big-rating">{averageRating}</span>
-          <div>
-            <div className="review-section__summary-stars">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <StarIcon key={i} filled={i <= Math.round(parseFloat(averageRating))} />
-              ))}
+        <div className="review-section__grid">
+          {/* Rating Summary */}
+          <div className="review-section__summary">
+            <span className="review-section__big-rating">{averageRating}</span>
+            <div>
+              <div className="review-section__summary-stars">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <StarIcon key={i} filled={i <= Math.round(parseFloat(averageRating))} />
+                ))}
+              </div>
+              <span className="review-section__summary-text">
+                Based on {totalReviews} Reviews
+              </span>
             </div>
-            <span className="review-section__summary-text">
-              Based on {totalReviews} Reviews
-            </span>
+          </div>
+
+          {/* Breakdown */}
+          <div className="review-section__breakdown">
+            {breakdownData.map((row) => (
+              <div key={row.stars} className="review-section__breakdown-row">
+                <span className="review-section__breakdown-label">{row.stars}★</span>
+                <div className="review-section__breakdown-bar">
+                  <div
+                    className="review-section__breakdown-fill"
+                    style={{ width: `${(row.count / totalReviews) * 100}%` }}
+                  />
+                </div>
+                <span className="review-section__breakdown-count">{row.count}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Reviews List */}
+          <div className="review-section__list">
+            {dummyReviews.map((review) => (
+              <div key={review.id} className="review-section__card">
+                <div className="review-section__card-header">
+                  <span className="review-section__card-name">{review.name}</span>
+                  <span className="review-section__card-date">{review.date}</span>
+                </div>
+                <div className="review-section__card-stars">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <StarIcon key={i} filled={i <= review.rating} />
+                  ))}
+                </div>
+                <p className="review-section__card-text">{review.text}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Breakdown */}
-        <div className="review-section__breakdown">
-          {breakdownData.map((row) => (
-            <div key={row.stars} className="review-section__breakdown-row">
-              <span className="review-section__breakdown-label">{row.stars}★</span>
-              <div className="review-section__breakdown-bar">
-                <div
-                  className="review-section__breakdown-fill"
-                  style={{ width: `${(row.count / totalReviews) * 100}%` }}
-                />
-              </div>
-              <span className="review-section__breakdown-count">{row.count}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Reviews List */}
-        <div className="review-section__list">
-          {dummyReviews.map((review) => (
-            <div key={review.id} className="review-section__card">
-              <div className="review-section__card-header">
-                <span className="review-section__card-name">{review.name}</span>
-                <span className="review-section__card-date">{review.date}</span>
-              </div>
-              <div className="review-section__card-stars">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <StarIcon key={i} filled={i <= review.rating} />
-                ))}
-              </div>
-              <p className="review-section__card-text">{review.text}</p>
-            </div>
-          ))}
+        <div className="review-section__write-btn">
+          <button className="btn-orange">Write a Review</button>
         </div>
       </div>
-
-      <div className="review-section__write-btn">
-        <button className="btn-orange">Write a Review</button>
-      </div>
-    </div>
+    </section>
   );
 };
 

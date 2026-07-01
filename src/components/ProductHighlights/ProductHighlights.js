@@ -22,19 +22,21 @@ const ProductHighlights = ({ highlights }) => {
   if (!highlights || highlights.length === 0) return null;
 
   return (
-    <div className="product-highlights">
-      <h3 className="product-highlights__title">Product Highlights</h3>
-      <div className="product-highlights__grid">
-        {highlights.map((highlight, index) => (
-          <div key={index} className="product-highlights__card">
-            <span className="product-highlights__icon">
-              <CheckCircleIcon />
-            </span>
-            <span className="product-highlights__text">{highlight}</span>
-          </div>
-        ))}
+    <section className="product-highlights section-padding">
+      <div className="container product-highlights__container">
+        <h3 className="product-highlights__title">Product Highlights</h3>
+        <div className="product-highlights__grid">
+          {highlights.map((highlight, index) => (
+            <div key={index} className="product-highlights__card">
+              <span className="product-highlights__icon">
+                <CheckCircleIcon />
+              </span>
+              <span className="product-highlights__text">{highlight}</span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

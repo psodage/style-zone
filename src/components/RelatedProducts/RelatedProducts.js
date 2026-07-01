@@ -149,41 +149,43 @@ const RelatedProducts = ({ products = [], currentProductId }) => {
   if (filteredProducts.length === 0) return null;
 
   return (
-    <div className="related-products">
-      <div className="section-header">
-        <h2 className="section-title">YOU MAY ALSO LIKE</h2>
-        <button className="view-all-btn">
-          VIEW ALL
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="9 6 15 12 9 18" />
-          </svg>
-        </button>
-      </div>
-
-      <div className="related-products__carousel-wrapper">
-        <button
-          className="related-products__arrow related-products__arrow--left"
-          onClick={() => scroll('left')}
-          aria-label="Scroll left"
-        >
-          <ChevronLeft />
-        </button>
-
-        <div className="related-products__carousel" ref={carouselRef}>
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+    <section className="related-products section-padding">
+      <div className="container">
+        <div className="section-header">
+          <h2 className="section-title">YOU MAY ALSO LIKE</h2>
+          <button className="view-all-btn">
+            VIEW ALL
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 6 15 12 9 18" />
+            </svg>
+          </button>
         </div>
 
-        <button
-          className="related-products__arrow related-products__arrow--right"
-          onClick={() => scroll('right')}
-          aria-label="Scroll right"
-        >
-          <ChevronRight />
-        </button>
+        <div className="related-products__carousel-wrapper">
+          <button
+            className="related-products__arrow related-products__arrow--left"
+            onClick={() => scroll('left')}
+            aria-label="Scroll left"
+          >
+            <ChevronLeft />
+          </button>
+
+          <div className="related-products__carousel" ref={carouselRef}>
+            {filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+
+          <button
+            className="related-products__arrow related-products__arrow--right"
+            onClick={() => scroll('right')}
+            aria-label="Scroll right"
+          >
+            <ChevronRight />
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -3,6 +3,10 @@
    ========================================== */
 
 .product-highlights {
+  background: var(--white);
+}
+
+.product-highlights__container {
   display: flex;
   flex-direction: column;
   gap: 16px;

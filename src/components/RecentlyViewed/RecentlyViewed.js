@@ -178,35 +178,37 @@ const RecentlyViewed = ({ currentProductId }) => {
   if (viewedProducts.length === 0) return null;
 
   return (
-    <div className="recently-viewed">
-      <div className="section-header">
-        <h2 className="section-title">RECENTLY VIEWED</h2>
-      </div>
-
-      <div className="recently-viewed__carousel-wrapper">
-        <button
-          className="recently-viewed__arrow recently-viewed__arrow--left"
-          onClick={() => scroll('left')}
-          aria-label="Scroll left"
-        >
-          <ChevronLeft />
-        </button>
-
-        <div className="recently-viewed__carousel" ref={carouselRef}>
-          {viewedProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+    <section className="recently-viewed section-padding">
+      <div className="container">
+        <div className="section-header">
+          <h2 className="section-title">RECENTLY VIEWED</h2>
         </div>
 
-        <button
-          className="recently-viewed__arrow recently-viewed__arrow--right"
-          onClick={() => scroll('right')}
-          aria-label="Scroll right"
-        >
-          <ChevronRight />
-        </button>
+        <div className="recently-viewed__carousel-wrapper">
+          <button
+            className="recently-viewed__arrow recently-viewed__arrow--left"
+            onClick={() => scroll('left')}
+            aria-label="Scroll left"
+          >
+            <ChevronLeft />
+          </button>
+
+          <div className="recently-viewed__carousel" ref={carouselRef}>
+            {viewedProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+
+          <button
+            className="recently-viewed__arrow recently-viewed__arrow--right"
+            onClick={() => scroll('right')}
+            aria-label="Scroll right"
+          >
+            <ChevronRight />
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -26,68 +26,70 @@ const ProductTabs = ({ description, specifications }) => {
   ].filter((row) => row.value);
 
   return (
-    <div className="product-tabs">
-      {/* Tab Bar */}
-      <div className="product-tabs__bar">
-        {TABS.map((tab) => (
-          <button
-            key={tab.key}
-            className={`product-tabs__tab${activeTab === tab.key ? ' product-tabs__tab--active' : ''}`}
-            onClick={() => setActiveTab(tab.key)}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
-
-      {/* Tab Content */}
-      <div className="product-tabs__content">
-        <AnimatePresence mode="wait">
-          {activeTab === 'description' && (
-            <motion.div
-              key="description"
-              variants={tabVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.25 }}
+    <section className="product-tabs section-padding">
+      <div className="container">
+        {/* Tab Bar */}
+        <div className="product-tabs__bar">
+          {TABS.map((tab) => (
+            <button
+              key={tab.key}
+              className={`product-tabs__tab${activeTab === tab.key ? ' product-tabs__tab--active' : ''}`}
+              onClick={() => setActiveTab(tab.key)}
             >
-              <p className="product-tabs__description">
-                {description || 'No description available.'}
-              </p>
-            </motion.div>
-          )}
+              {tab.label}
+            </button>
+          ))}
+        </div>
 
-          {activeTab === 'specifications' && (
-            <motion.div
-              key="specifications"
-              variants={tabVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.25 }}
-            >
-              {specRows.length > 0 ? (
-                <table className="product-tabs__specs-table">
-                  <tbody>
-                    {specRows.map((row, i) => (
-                      <tr key={i}>
-                        <td className="product-tabs__specs-label">{row.label}</td>
-                        <td className="product-tabs__specs-value">{row.value}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              ) : (
+        {/* Tab Content */}
+        <div className="product-tabs__content">
+          <AnimatePresence mode="wait">
+            {activeTab === 'description' && (
+              <motion.div
+                key="description"
+                variants={tabVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.25 }}
+              >
                 <p className="product-tabs__description">
-                  No specifications available.
+                  {description || 'No description available.'}
                 </p>
-              )}
-            </motion.div>
-          )}
-        </AnimatePresence>
+              </motion.div>
+            )}
+
+            {activeTab === 'specifications' && (
+              <motion.div
+                key="specifications"
+                variants={tabVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.25 }}
+              >
+                {specRows.length > 0 ? (
+                  <table className="product-tabs__specs-table">
+                    <tbody>
+                      {specRows.map((row, i) => (
+                        <tr key={i}>
+                          <td className="product-tabs__specs-label">{row.label}</td>
+                          <td className="product-tabs__specs-value">{row.value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                ) : (
+                  <p className="product-tabs__description">
+                    No specifications available.
+                  </p>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
