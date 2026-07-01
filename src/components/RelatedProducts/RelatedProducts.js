@@ -1,6 +1,8 @@
 import React, { useRef, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useWishlist } from '../../context/WishlistContext';
+import { useCart } from '../../context/CartContext';
+import { useToast } from '../../context/ToastContext';
 import './RelatedProducts.css';
 
 const StarIcon = ({ filled }) => (
@@ -29,11 +31,54 @@ const HeartIcon = ({ filled }) => (
 
 const ProductCard = ({ product }) => {
   const { isInWishlist, toggleWishlist } = useWishlist();
+  const { addToCart } = useCart();
+  const { showToast } = useToast();
+  const navigate = useNavigate();
+
   const wishlisted = isInWishlist(product.id);
   const filledStars = Math.round(product.rating || 0);
 
+  const handleCardClick = () => {
+    navigate(`/products/${product.id}`);
+  };
+
+  const handleQuickAdd = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const defaultSize = product.sizes && product.sizes.length > 0 ? product.sizes[0] : 'UK 8';
+    const defaultColor = product.colors && product.colors.length > 0 ? product.colors[0].name : 'Black';
+
+    addToCart({
+      id: product.id,
+      name: product.name,
+      brand: product.brand,
+      brandLogo: product.brandLogo,
+      price: product.price,
+      originalPrice: product.originalPrice,
+      discount: product.discount,
+      image: product.image,
+      quantity: 1,
+      size: defaultSize,
+      color: defaultColor,
+    });
+
+    showToast(`Added to Cart: ${product.name} (${defaultSize} / ${defaultColor})`, 'success');
+  };
+
   return (
-    <Link to={`/products/${product.id}`} className="related-products__card">
+    <div
+      onClick={handleCardClick}
+      className="related-products__card"
+      role="button"
+      tabIndex={0}
+      aria-label={product.name}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          handleCardClick();
+        }
+      }}
+    >
       <div className="related-products__card-image-wrapper">
         <img
           src={product.image}
@@ -44,10 +89,7 @@ const ProductCard = ({ product }) => {
         <div className="related-products__card-overlay">
           <button
             className="related-products__overlay-cart-btn"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-            }}
+            onClick={handleQuickAdd}
           >
             Add to Cart
           </button>
@@ -83,7 +125,7 @@ const ProductCard = ({ product }) => {
           )}
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

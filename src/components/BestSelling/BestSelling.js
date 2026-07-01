@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useWishlist } from '../../context/WishlistContext';
+import { useCart } from '../../context/CartContext';
+import { useToast } from '../../context/ToastContext';
 import './BestSelling.css';
 import { products, categories } from '../../data/products';
 
@@ -15,10 +17,54 @@ const StarRating = ({ rating }) => (
 
 const ProductCard = ({ product }) => {
   const { isInWishlist, toggleWishlist } = useWishlist();
+  const { addToCart } = useCart();
+  const { showToast } = useToast();
+  const navigate = useNavigate();
+
   const wishlisted = isInWishlist(product.id);
 
+  const handleCardClick = () => {
+    navigate(`/products/${product.id}`);
+  };
+
+  const handleQuickAdd = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Default to first size and color or fallback values
+    const defaultSize = product.sizes && product.sizes.length > 0 ? product.sizes[0] : 'UK 8';
+    const defaultColor = product.colors && product.colors.length > 0 ? product.colors[0].name : 'Black';
+
+    addToCart({
+      id: product.id,
+      name: product.name,
+      brand: product.brand,
+      brandLogo: product.brandLogo,
+      price: product.price,
+      originalPrice: product.originalPrice,
+      discount: product.discount,
+      image: product.image,
+      quantity: 1,
+      size: defaultSize,
+      color: defaultColor,
+    });
+
+    showToast(`Added to Cart: ${product.name} (${defaultSize} / ${defaultColor})`, 'success');
+  };
+
   return (
-    <Link to={`/products/${product.id}`} className="product-card" role="article" aria-label={product.name}>
+    <div
+      onClick={handleCardClick}
+      className="product-card"
+      role="button"
+      tabIndex={0}
+      aria-label={product.name}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          handleCardClick();
+        }
+      }}
+    >
       <div className="product-img-wrap">
         <img
           src={product.image}
@@ -27,7 +73,11 @@ const ProductCard = ({ product }) => {
           loading="lazy"
         />
         <div className="product-overlay">
-          <button className="quick-add-btn" aria-label={`Quick add ${product.name} to cart`}>
+          <button
+            className="quick-add-btn"
+            aria-label={`Quick add ${product.name} to cart`}
+            onClick={handleQuickAdd}
+          >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
               <line x1="3" y1="6" x2="21" y2="6"/>
@@ -72,7 +122,7 @@ const ProductCard = ({ product }) => {
           <span className="product-save">{product.discount}% OFF</span>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
