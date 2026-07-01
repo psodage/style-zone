@@ -1,0 +1,262 @@
+/* ==========================================
+   RECENTLY VIEWED COMPONENT
+   ========================================== */
+
+.recently-viewed {
+  width: 100%;
+}
+
+/* Carousel Wrapper */
+.recently-viewed__carousel-wrapper {
+  position: relative;
+}
+
+.recently-viewed__carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 4px 0 16px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.recently-viewed__carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+.recently-viewed__card {
+  min-width: 200px;
+  max-width: 200px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: var(--transition);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.recently-viewed__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Card Image */
+.recently-viewed__card-image-wrapper {
+  position: relative;
+  background: var(--light-gray);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.recently-viewed__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.recently-viewed__card:hover .recently-viewed__card-image {
+  transform: scale(1.08);
+}
+
+/* Overlay */
+.recently-viewed__card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 12px 12px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.recently-viewed__card:hover .recently-viewed__card-overlay {
+  transform: translateY(0);
+}
+
+.recently-viewed__overlay-cart-btn {
+  font-family: var(--font-montserrat);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  background: var(--orange);
+  color: var(--white);
+  border: none;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.recently-viewed__overlay-cart-btn:hover {
+  background: var(--orange-dark);
+}
+
+.recently-viewed__overlay-wishlist-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.recently-viewed__overlay-wishlist-btn:hover {
+  border-color: var(--orange);
+  background: rgba(255, 106, 0, 0.2);
+}
+
+.recently-viewed__overlay-wishlist-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Card Info */
+.recently-viewed__card-info {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.recently-viewed__card-brand {
+  font-family: var(--font-inter);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.recently-viewed__card-rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.recently-viewed__card-rating svg {
+  width: 12px;
+  height: 12px;
+}
+
+.recently-viewed__card-rating-text {
+  font-family: var(--font-inter);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-gray);
+  margin-left: 2px;
+}
+
+.recently-viewed__card-name {
+  font-family: var(--font-inter);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--secondary);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.recently-viewed__card-price-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.recently-viewed__card-price {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.recently-viewed__card-original-price {
+  font-family: var(--font-inter);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-gray);
+  text-decoration: line-through;
+}
+
+.recently-viewed__card-discount {
+  font-family: var(--font-inter);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+/* Scroll Arrows */
+.recently-viewed__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 2;
+  box-shadow: var(--shadow-sm);
+  padding: 0;
+}
+
+.recently-viewed__arrow:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+.recently-viewed__arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+.recently-viewed__arrow--left {
+  left: -18px;
+}
+
+.recently-viewed__arrow--right {
+  right: -18px;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+  .recently-viewed__arrow {
+    display: none;
+  }
+
+  .recently-viewed__card {
+    min-width: 170px;
+    max-width: 170px;
+  }
+}

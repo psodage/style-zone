@@ -1,0 +1,111 @@
+/* ==========================================
+   ADD TO CART BUTTON COMPONENT
+   ========================================== */
+
+.add-to-cart-group {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+/* Shared Button Base */
+.add-to-cart-btn,
+.buy-now-btn {
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  flex: 1;
+}
+
+/* ADD TO CART */
+.add-to-cart-btn {
+  background: var(--orange);
+  color: var(--white);
+  border: 2px solid var(--orange);
+}
+
+.add-to-cart-btn:hover:not(:disabled) {
+  background: var(--orange-dark);
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
+}
+
+.add-to-cart-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* BUY NOW */
+.buy-now-btn {
+  background: var(--dark);
+  color: var(--orange);
+  border: 2px solid var(--orange);
+}
+
+.buy-now-btn:hover:not(:disabled) {
+  background: var(--orange);
+  color: var(--white);
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(255, 106, 0, 0.4);
+}
+
+/* Disabled */
+.add-to-cart-btn:disabled,
+.buy-now-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Ripple Effect */
+@keyframes ripple-effect {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.add-to-cart-btn .ripple,
+.buy-now-btn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  animation: ripple-effect 0.6s ease-out forwards;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+  .add-to-cart-group {
+    flex-direction: column;
+  }
+
+  .add-to-cart-btn,
+  .buy-now-btn {
+    padding: 14px 24px;
+    width: 100%;
+  }
+}

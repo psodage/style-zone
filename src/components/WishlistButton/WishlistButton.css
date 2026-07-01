@@ -1,0 +1,28 @@
+/* ==========================================
+   WISHLIST BUTTON COMPONENT
+   ========================================== */
+
+.wishlist-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.wishlist-btn:hover {
+  border-color: var(--orange);
+}
+
+.wishlist-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: var(--transition);
+}

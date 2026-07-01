@@ -1,0 +1,62 @@
+/* ==========================================
+   COLOR SELECTOR COMPONENT
+   ========================================== */
+
+.color-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.color-selector__label {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.color-selector__label span {
+  font-weight: 400;
+  color: var(--text-gray);
+  margin-left: 6px;
+}
+
+.color-selector__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.color-selector__swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+  outline: none;
+  padding: 0;
+  position: relative;
+  background: none;
+}
+
+.color-selector__swatch-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+}
+
+.color-selector__swatch--white {
+  border-color: #ddd;
+}
+
+.color-selector__swatch:hover {
+  transform: scale(1.15);
+}
+
+.color-selector__swatch--selected {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -10,7 +11,7 @@ const Footer = () => {
         <div className="container footer-grid">
           {/* Column 1 - Brand */}
           <div className="footer-col footer-brand">
-            <a href="/" className="footer-logo" aria-label="StyleZone home">
+            <Link to="/" className="footer-logo" aria-label="StyleZone home">
               <img
                 src="/logo-icon.png"
                 alt="StyleZone Icon"
@@ -21,7 +22,7 @@ const Footer = () => {
                 alt="StyleZone - Style That Defines You"
                 className="footer-logo-head-img"
               />
-            </a>
+            </Link>
             <p className="footer-brand-desc">
               Your one stop destination for running shoes, gear, accessories & supplements.
             </p>
@@ -57,7 +58,7 @@ const Footer = () => {
             <h3 className="footer-col-title">SHOP</h3>
             <ul className="footer-links">
               {['Running Shoes', 'Crocs', 'Flip Flops', 'Sandals', 'Supplements', 'Apparel', 'Accessories'].map(link => (
-                <li key={link}><a href={`/${link.toLowerCase().replace(' ', '-')}`} className="footer-link">{link}</a></li>
+                <li key={link}><Link to={`/products`} className="footer-link">{link}</Link></li>
               ))}
             </ul>
           </div>
@@ -67,7 +68,7 @@ const Footer = () => {
             <h3 className="footer-col-title">HELP</h3>
             <ul className="footer-links">
               {['Track Order', 'Shipping Policy', 'Return & Refund', 'FAQs', 'Size Guide', 'Contact Us'].map(link => (
-                <li key={link}><a href={`/${link.toLowerCase().replace(/\s+/g, '-')}`} className="footer-link">{link}</a></li>
+                <li key={link}><Link to={`/help`} className="footer-link">{link}</Link></li>
               ))}
             </ul>
           </div>
@@ -77,7 +78,7 @@ const Footer = () => {
             <h3 className="footer-col-title">COMPANY</h3>
             <ul className="footer-links">
               {['About Us', 'Careers', 'Our Stores', 'Blog', 'Terms & Conditions', 'Privacy Policy'].map(link => (
-                <li key={link}><a href={`/${link.toLowerCase().replace(/\s+/g, '-')}`} className="footer-link">{link}</a></li>
+                <li key={link}><Link to={`/company`} className="footer-link">{link}</Link></li>
               ))}
             </ul>
           </div>
@@ -87,7 +88,7 @@ const Footer = () => {
             <h3 className="footer-col-title">ACCOUNT</h3>
             <ul className="footer-links">
               {['My Account', 'Orders', 'Wishlist', 'Addresses', 'Profile'].map(link => (
-                <li key={link}><a href={`/${link.toLowerCase().replace(' ', '-')}`} className="footer-link">{link}</a></li>
+                <li key={link}><Link to={`/account`} className="footer-link">{link}</Link></li>
               ))}
             </ul>
           </div>
@@ -128,9 +129,9 @@ const Footer = () => {
             © 2024 Stylezone. All Rights Reserved.
           </p>
           <div className="footer-bottom-links">
-            <a href="/privacy" className="footer-bottom-link">Privacy Policy</a>
-            <a href="/terms" className="footer-bottom-link">Terms of Use</a>
-            <a href="/sitemap" className="footer-bottom-link">Sitemap</a>
+            <Link to="/privacy" className="footer-bottom-link">Privacy Policy</Link>
+            <Link to="/terms" className="footer-bottom-link">Terms of Use</Link>
+            <Link to="/sitemap" className="footer-bottom-link">Sitemap</Link>
           </div>
         </div>
       </div>

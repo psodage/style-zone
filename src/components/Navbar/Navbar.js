@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
+import { useWishlist } from '../../context/WishlistContext';
 import './Navbar.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
+  
+  const { cartCount, cartTotal } = useCart();
+  const { wishlistCount } = useWishlist();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -33,7 +40,7 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="container navbar-inner">
           {/* Logo */}
-          <a href="/" className="logo">
+          <Link to="/" className="logo">
             <img
               src="/logo-icon.png"
               alt="StyleZone Icon"
@@ -44,20 +51,20 @@ const Navbar = () => {
               alt="StyleZone - Style That Defines You"
               className="logo-head-img"
             />
-          </a>
+          </Link>
 
           {/* Center Navigation */}
           <ul className={`nav-links ${mobileOpen ? 'open' : ''}`}>
-            <li><a href="/" className="nav-link active">HOME</a></li>
+            <li><Link to="/" className="nav-link active">HOME</Link></li>
             <li className="has-dropdown">
-              <a href="/shop" className="nav-link">
+              <Link to="/products" className="nav-link">
                 SHOP <span className="dropdown-arrow">▾</span>
-              </a>
+              </Link>
             </li>
-            <li><a href="/brands" className="nav-link">BRANDS</a></li>
-            <li><a href="/new-arrivals" className="nav-link">NEW ARRIVALS</a></li>
-            <li><a href="/offers" className="nav-link">OFFERS</a></li>
-            <li><a href="/supplements" className="nav-link">SUPPLEMENTS</a></li>
+            <li><Link to="/brands" className="nav-link">BRANDS</Link></li>
+            <li><Link to="/new-arrivals" className="nav-link">NEW ARRIVALS</Link></li>
+            <li><Link to="/offers" className="nav-link">OFFERS</Link></li>
+            <li><Link to="/supplements" className="nav-link">SUPPLEMENTS</Link></li>
           </ul>
 
           {/* Right Actions */}
@@ -84,7 +91,7 @@ const Navbar = () => {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                 </svg>
-                <span className="nav-badge">2</span>
+                {wishlistCount > 0 && <span className="nav-badge">{wishlistCount}</span>}
               </div>
             </button>
 
@@ -97,15 +104,18 @@ const Navbar = () => {
             </button>
 
             {/* Cart Icon with badge */}
-            <button className="nav-cart-btn" aria-label="Shopping Cart">
+            <button className="nav-cart-btn" aria-label="Shopping Cart" onClick={() => navigate('/cart')}>
               <div className="nav-icon-badge-wrap">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
                   <line x1="3" y1="6" x2="21" y2="6"/>
                   <path d="M16 10a4 4 0 0 1-8 0"/>
                 </svg>
-                <span className="nav-badge">3</span>
+                {cartCount > 0 && <span className="nav-badge">{cartCount}</span>}
               </div>
+              {cartCount > 0 && (
+                <span className="nav-cart-total">₹{cartTotal.toLocaleString('en-IN')}</span>
+              )}
             </button>
 
             {/* Mobile Menu Toggle */}

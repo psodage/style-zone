@@ -1,0 +1,42 @@
+/* ==========================================
+   PAYMENT OPTIONS COMPONENT
+   ========================================== */
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-options__label {
+  font-family: var(--font-inter);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.payment-options__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.payment-options__badge {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-inter);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--secondary);
+  background: var(--white);
+  cursor: default;
+  transition: var(--transition);
+  line-height: 1.2;
+  user-select: none;
+}
+
+.payment-options__badge:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}

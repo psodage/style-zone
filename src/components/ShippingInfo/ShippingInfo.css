@@ -1,0 +1,61 @@
+/* ==========================================
+   SHIPPING INFO COMPONENT
+   ========================================== */
+
+.shipping-info {
+  background: var(--light-gray);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.shipping-info__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.shipping-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.shipping-info__icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--orange);
+}
+
+.shipping-info__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.shipping-info__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.shipping-info__title {
+  font-family: var(--font-inter);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--secondary);
+  line-height: 1.3;
+}
+
+.shipping-info__subtitle {
+  font-family: var(--font-inter);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-gray);
+  line-height: 1.3;
+}
+
+@media (max-width: 480px) {
+  .shipping-info__grid {
+    grid-template-columns: 1fr;
+  }
+}
