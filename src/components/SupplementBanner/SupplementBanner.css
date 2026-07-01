@@ -58,21 +58,22 @@
 }
 
 .supp-tag {
+  font-family: var(--font-montserrat);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--orange);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .supp-title {
-  font-family: var(--font-heading);
-  font-size: clamp(28px, 3.5vw, 42px);
-  font-weight: 900;
-  font-style: italic;
+  font-family: var(--font-bebas);
+  font-size: clamp(28px, 4.5vw, 46px);
+  font-weight: 400; /* normal */
   color: var(--white);
-  line-height: 1.15;
-  letter-spacing: -1px;
+  line-height: 1.0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .supp-title-orange {
@@ -83,6 +84,7 @@
 }
 
 .supp-desc {
+  font-family: var(--font-inter);
   font-size: 15px;
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.7;
@@ -147,15 +149,18 @@
 }
 
 .supp-product-name {
+  font-family: var(--font-inter);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--white);
   letter-spacing: 0.5px;
 }
 
 .supp-product-desc {
+  font-family: var(--font-inter);
   font-size: 10px;
   color: rgba(255,255,255,0.5);
+  font-weight: 400;
 }
 
 /* ==========================================

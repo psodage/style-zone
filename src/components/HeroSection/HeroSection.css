@@ -55,14 +55,25 @@
 
 /* Title */
 .hero-title {
-  font-family: var(--font-heading);
-  font-size: clamp(48px, 6.5vw, 80px);
-  font-weight: 900;
-  font-style: italic;
-  line-height: 1.0;
+  font-family: var(--font-bebas);
+  font-size: 2.8rem;
+  font-weight: 400; /* Bebas Neue default/normal */
+  line-height: 0.9;
   color: var(--white);
-  letter-spacing: -2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+@media (min-width: 600px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-title {
+    font-size: clamp(5rem, 8vw, 7rem);
+  }
 }
 
 .hero-title-orange {
@@ -98,9 +109,9 @@
 .btn-hero-primary {
   background: var(--orange);
   color: var(--white);
-  font-family: var(--font);
+  font-family: var(--font-montserrat);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   padding: 14px 32px;
   border-radius: var(--radius-sm);
   border: none;
@@ -110,31 +121,9 @@
   gap: 8px;
   transition: var(--transition);
   letter-spacing: 0.5px;
+  text-transform: uppercase;
   position: relative;
   overflow: hidden;
-}
-
-.btn-hero-primary::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.5s;
-}
-
-.btn-hero-primary:hover::before {
-  transform: translateX(100%);
-}
-
-.btn-hero-primary:hover {
-  background: var(--orange-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255, 106, 0, 0.5);
-}
-
-.btn-hero-primary:hover svg {
-  transform: translateX(4px);
 }
 
 .btn-hero-primary svg {
@@ -144,21 +133,15 @@
 .btn-hero-outline {
   background: transparent;
   color: var(--white);
-  font-family: var(--font);
+  font-family: var(--font-montserrat);
   font-size: 14px;
   font-weight: 600;
   padding: 14px 32px;
   border-radius: var(--radius-sm);
   border: 2px solid rgba(255,255,255,0.4);
   cursor: pointer;
-  transition: var(--transition);
   letter-spacing: 0.5px;
-}
-
-.btn-hero-outline:hover {
-  border-color: var(--white);
-  background: rgba(255,255,255,0.08);
-  transform: translateY(-2px);
+  text-transform: uppercase;
 }
 
 /* Spacer for the background runner on the right */
@@ -219,7 +202,7 @@
   }
 
   .hero-title {
-    letter-spacing: -1px;
+    letter-spacing: 1px;
   }
 
   .btn-hero-primary, .btn-hero-outline {

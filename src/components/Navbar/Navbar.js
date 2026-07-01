@@ -35,9 +35,14 @@ const Navbar = () => {
           {/* Logo */}
           <a href="/" className="logo">
             <img
-              src="/logo.jpg"
+              src="/logo-icon.png"
+              alt="StyleZone Icon"
+              className="logo-icon-img"
+            />
+            <img
+              src="/logo-head.png"
               alt="StyleZone - Style That Defines You"
-              className="logo-img"
+              className="logo-head-img"
             />
           </a>
 
@@ -53,7 +58,6 @@ const Navbar = () => {
             <li><a href="/new-arrivals" className="nav-link">NEW ARRIVALS</a></li>
             <li><a href="/offers" className="nav-link">OFFERS</a></li>
             <li><a href="/supplements" className="nav-link">SUPPLEMENTS</a></li>
-            <li><a href="/blogs" className="nav-link">BLOGS</a></li>
           </ul>
 
           {/* Right Actions */}
@@ -92,7 +96,7 @@ const Navbar = () => {
               </svg>
             </button>
 
-            {/* Cart Icon with badge and price */}
+            {/* Cart Icon with badge */}
             <button className="nav-cart-btn" aria-label="Shopping Cart">
               <div className="nav-icon-badge-wrap">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -102,7 +106,6 @@ const Navbar = () => {
                 </svg>
                 <span className="nav-badge">3</span>
               </div>
-              <span className="nav-cart-total">₹4,999</span>
             </button>
 
             {/* Mobile Menu Toggle */}

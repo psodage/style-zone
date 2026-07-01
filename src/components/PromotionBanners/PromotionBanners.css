@@ -27,10 +27,6 @@
   cursor: pointer;
 }
 
-.promo-banner:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
 
 /* Dark Banner */
 .banner-dark {
@@ -71,22 +67,25 @@
 }
 
 .promo-tag {
+  font-family: var(--font-montserrat);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--orange);
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
 .promo-tag-white {
+  font-family: var(--font-montserrat);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   color: rgba(255,255,255,0.9);
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
 .promo-title {
+  font-family: var(--font-inter);
   font-size: 22px;
   font-weight: 800;
   color: var(--white);
@@ -94,6 +93,7 @@
 }
 
 .promo-title-dark {
+  font-family: var(--font-inter);
   font-size: 22px;
   font-weight: 800;
   color: var(--dark);
@@ -106,9 +106,9 @@
 .btn-promo-outline {
   background: var(--white);
   color: var(--secondary);
-  font-family: var(--font);
+  font-family: var(--font-montserrat);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   padding: 10px 22px;
   border-radius: var(--radius-sm);
   border: none;
@@ -116,16 +116,9 @@
   width: fit-content;
   transition: var(--transition);
   letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.btn-promo-dark:hover,
-.btn-promo-white:hover,
-.btn-promo-outline:hover {
-  background: var(--orange);
-  color: var(--white);
-  transform: scale(1.04);
-  box-shadow: 0 4px 15px rgba(255, 106, 0, 0.25);
-}
 
 /* Image */
 .promo-img-wrap {
@@ -153,9 +146,6 @@
   height: 130px;
 }
 
-.promo-banner:hover .promo-img {
-  transform: scale(1.06) rotate(-2deg);
-}
 
 /* ==========================================
    RESPONSIVE

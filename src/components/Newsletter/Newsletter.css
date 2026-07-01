@@ -25,17 +25,20 @@
 }
 
 .newsletter-title {
-  font-size: 16px;
-  font-weight: 800;
+  font-family: var(--font-bebas);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 400; /* Bebas Neue default */
   color: var(--white);
-  letter-spacing: 0.5px;
-  white-space: nowrap;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  text-transform: uppercase;
 }
 
 .newsletter-desc {
+  font-family: var(--font-inter);
   font-size: 12px;
   color: rgba(255,255,255,0.5);
-  white-space: nowrap;
+  font-weight: 400;
 }
 
 /* Form */
@@ -53,8 +56,9 @@
   border-right: none;
   border-radius: var(--radius-sm) 0 0 var(--radius-sm);
   padding: 10px 16px;
-  font-family: var(--font);
+  font-family: var(--font-inter);
   font-size: 13px;
+  font-weight: 400;
   color: var(--white);
   outline: none;
   width: 200px;
@@ -73,9 +77,9 @@
 .subscribe-btn {
   background: var(--orange);
   color: var(--white);
-  font-family: var(--font);
+  font-family: var(--font-inter);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   padding: 10px 20px;
   border: none;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
@@ -83,6 +87,7 @@
   transition: var(--transition);
   white-space: nowrap;
   letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .subscribe-btn:hover {
@@ -106,6 +111,7 @@
 }
 
 .benefit-item span {
+  font-family: var(--font-inter);
   font-size: 12px;
   color: rgba(255,255,255,0.65);
   font-weight: 500;

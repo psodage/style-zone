@@ -23,7 +23,7 @@
   cursor: pointer;
   transition: var(--transition);
   aspect-ratio: 3/2;
-  font-family: var(--font);
+  font-family: var(--font-montserrat);
 }
 
 .brand-card:hover {
@@ -33,6 +33,7 @@
 }
 
 .brand-name {
+  font-family: var(--font-montserrat);
   font-size: 16px;
   font-weight: 800;
   color: var(--secondary);
@@ -47,57 +48,21 @@
   color: var(--orange);
 }
 
-/* Brand specific styles */
-.brand-name-nike {
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: -0.5px;
+.brand-logo-img {
+  max-width: 90%;
+  max-height: 38px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0) opacity(0.8);
+  transition: var(--transition);
 }
 
-.brand-name-adidas {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.brand-name-puma {
-  font-size: 20px;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.brand-name-asics {
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.brand-name-crocs {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.brand-name-skechers {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.brand-name-newbalance {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  text-transform: none;
-}
-
-.brand-name-rider {
-  font-size: 18px;
-  font-weight: 800;
-  font-style: italic;
+.brand-card:hover .brand-logo-img {
+  filter: grayscale(1) brightness(0) opacity(1);
+  transform: scale(1.06);
 }
 
 .brand-name-viewall {
+  font-family: var(--font-montserrat);
   font-size: 11px;
   font-weight: 700;
   color: var(--text-gray);

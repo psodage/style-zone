@@ -19,8 +19,11 @@
   --light-gray: #F6F6F6;
   --border: #EAEAEA;
   --text-gray: #777777;
-  --font: 'Poppins', sans-serif;
-  --font-heading: 'Montserrat', sans-serif;
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font: var(--font-inter);
+  --font-heading: var(--font-bebas);
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
   --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
   --shadow-lg: 0 8px 40px rgba(0,0,0,0.18);
@@ -52,7 +55,7 @@ a {
 
 button {
   cursor: pointer;
-  font-family: var(--font);
+  font-family: var(--font-montserrat);
   border: none;
   outline: none;
 }
@@ -83,14 +86,89 @@ ul {
   margin-bottom: 28px;
 }
 
-.section-title {
-  font-size: 28px;
+/* ==========================================
+   TYPOGRAPHY SYSTEM UTILITIES
+   ========================================== */
+.font-hero {
+  font-family: var(--font-bebas);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 0.9;
+  font-weight: 400;
+}
+
+.font-section-heading {
+  font-family: var(--font-bebas);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.0;
+  font-weight: 400;
+}
+
+.font-nav {
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.font-btn {
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.font-product-title,
+.font-card-title {
+  font-family: var(--font-inter);
+  font-weight: 600;
+}
+
+.font-product-price,
+.font-card-price {
+  font-family: var(--font-inter);
   font-weight: 700;
+}
+
+.font-product-desc,
+.font-card-desc {
+  font-family: var(--font-inter);
+  font-weight: 400;
+}
+
+.font-card-discount {
+  font-family: var(--font-inter);
+  font-weight: 600;
+}
+
+.font-form-label {
+  font-family: var(--font-inter);
+  font-weight: 500;
+}
+
+.font-form-input {
+  font-family: var(--font-inter);
+  font-weight: 400;
+}
+
+.font-form-btn {
+  font-family: var(--font-inter);
+  font-weight: 600;
+}
+
+.section-title {
+  font-family: var(--font-bebas);
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 400;
   color: var(--secondary);
-  letter-spacing: -0.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.0;
 }
 
 .view-all-btn {
+  font-family: var(--font-montserrat);
   font-size: 14px;
   font-weight: 600;
   color: var(--orange);
@@ -102,6 +180,8 @@ ul {
   gap: 4px;
   transition: var(--transition);
   padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .view-all-btn:hover {
@@ -111,6 +191,7 @@ ul {
 
 /* Orange CTA Button */
 .btn-orange {
+  font-family: var(--font-montserrat);
   background: var(--orange);
   color: var(--white);
   font-weight: 600;
@@ -125,6 +206,8 @@ ul {
   gap: 8px;
   position: relative;
   overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .btn-orange::after {
@@ -147,6 +230,7 @@ ul {
 
 /* Outline Button */
 .btn-outline {
+  font-family: var(--font-montserrat);
   background: transparent;
   color: var(--white);
   font-weight: 600;
@@ -159,6 +243,8 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .btn-outline:hover {

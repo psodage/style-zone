@@ -15,7 +15,7 @@ const HeroSection = () => {
     <section className="hero" ref={heroRef} id="hero">
       {/* Background - blurred city running scene */}
       <div className="hero-bg">
-        <div className="hero-bg-image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/hero-runner.jpg)` }}></div>
+        <div className="hero-bg-image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/new-hero.png)` }}></div>
         <div className="hero-bg-overlay"></div>
       </div>
 

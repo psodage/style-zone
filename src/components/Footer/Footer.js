@@ -12,9 +12,14 @@ const Footer = () => {
           <div className="footer-col footer-brand">
             <a href="/" className="footer-logo" aria-label="StyleZone home">
               <img
-                src="/logo.jpg"
+                src="/logo-icon.png"
+                alt="StyleZone Icon"
+                className="footer-logo-icon-img"
+              />
+              <img
+                src="/logo-head.png"
                 alt="StyleZone - Style That Defines You"
-                className="footer-logo-img"
+                className="footer-logo-head-img"
               />
             </a>
             <p className="footer-brand-desc">
@@ -92,15 +97,15 @@ const Footer = () => {
             <h3 className="footer-col-title">PAYMENT METHODS</h3>
             <div className="payment-methods">
               {[
-                { name: 'VISA', color: '#1A1F71', textColor: '#fff' },
-                { name: 'MC', color: '#EB001B', textColor: '#fff', secondary: '#F79E1B' },
-                { name: 'RuPay', color: '#fff', textColor: '#003580' },
-                { name: 'UPI', color: '#097939', textColor: '#fff' },
-                { name: 'Paytm', color: '#00B9F1', textColor: '#fff' },
-                { name: 'G Pay', color: '#4285F4', textColor: '#fff' },
+                { name: 'Visa', src: 'https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_2014_logo.svg' },
+                { name: 'Mastercard', src: 'https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg' },
+                { name: 'RuPay', src: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Rupay-Logo.svg' },
+                { name: 'UPI', src: 'https://upload.wikimedia.org/wikipedia/commons/e/e1/UPI-Logo-vector.svg' },
+                { name: 'Paytm', src: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Paytm_Logo_%28standalone%29.svg' },
+                { name: 'G Pay', src: 'https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg' },
               ].map(p => (
-                <div key={p.name} className="payment-badge" style={{ background: p.color }}>
-                  <span style={{ color: p.textColor, fontSize: '10px', fontWeight: '700' }}>{p.name}</span>
+                <div key={p.name} className="payment-badge">
+                  <img src={p.src} alt={p.name} className="payment-logo-img" />
                 </div>
               ))}
             </div>

@@ -1,29 +1,15 @@
 import React from 'react';
 import './BrandsSection.css';
 
-const NikeLogo = () => (
-  <svg viewBox="0 0 24 24" width="48" height="24" fill="currentColor" aria-hidden="true">
-    <path d="M21 6.5c-1-.5-3.5-.2-6 1C12.5 8.7 8 11.5 5 14c-1.5 1.2-3 2.5-4 3.5c1-.5 3-1.2 5.5-2.2c4.5-1.8 11-4.8 13.5-6.5c1.5-1 2.2-2 1-2.3z"/>
-  </svg>
-);
-
-const AdidasLogo = () => (
-  <svg viewBox="0 0 24 24" width="36" height="24" fill="currentColor" aria-hidden="true">
-    <polygon points="3,20 7,20 12,11 8,11" />
-    <polygon points="8.5,20 12.5,20 17.5,6.5 13.5,6.5" />
-    <polygon points="14,20 18,20 23,2 19,2" />
-  </svg>
-);
-
 const brandNames = [
-  { id: 1, name: 'NIKE', logo: <NikeLogo />, style: 'nike' },
-  { id: 2, name: 'adidas', logo: <AdidasLogo />, style: 'adidas' },
-  { id: 3, name: 'PUMA', logo: null, style: 'puma' },
-  { id: 4, name: 'ASICS', logo: null, style: 'asics' },
-  { id: 5, name: 'crocs', logo: null, style: 'crocs' },
-  { id: 6, name: 'SKECHERS', logo: null, style: 'skechers' },
-  { id: 7, name: 'New Balance', logo: null, style: 'newbalance' },
-  { id: 8, name: 'rider', logo: null, style: 'rider' },
+  { id: 1, name: 'NIKE', logo: '/brand-logos/nike.svg', style: 'nike' },
+  { id: 2, name: 'adidas', logo: '/brand-logos/adidas.svg', style: 'adidas' },
+  { id: 3, name: 'PUMA', logo: '/brand-logos/puma.svg', style: 'puma' },
+  { id: 4, name: 'ASICS', logo: '/brand-logos/asics.svg', style: 'asics' },
+  { id: 5, name: 'crocs', logo: '/brand-logos/crocs.svg', style: 'crocs' },
+  { id: 6, name: 'SKECHERS', logo: '/brand-logos/skechers.svg', style: 'skechers' },
+  { id: 7, name: 'New Balance', logo: '/brand-logos/newbalance.svg', style: 'newbalance' },
+  { id: 8, name: 'rider', logo: '/brand-logos/rider.svg', style: 'rider' },
 ];
 
 const BrandsSection = () => {
@@ -48,11 +34,11 @@ const BrandsSection = () => {
               style={{ transitionDelay: `${i * 0.05}s` }}
               aria-label={`Shop ${brand.name}`}
             >
-              {brand.logo ? (
-                brand.logo
-              ) : (
-                <span className={`brand-name brand-name-${brand.style}`}>{brand.name}</span>
-              )}
+              <img
+                src={brand.logo}
+                alt={`${brand.name} Logo`}
+                className="brand-logo-img"
+              />
             </button>
           ))}
 
