@@ -33,6 +33,18 @@
   background: linear-gradient(135deg, #0A0A0A 0%, #1C1C1C 100%);
 }
 
+/* White Banner */
+.banner-white {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 100%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+/* Black Banner */
+.banner-black {
+  background: linear-gradient(135deg, #080808 0%, #151515 100%);
+}
+
 .promo-glow {
   position: absolute;
   width: 200px;
@@ -42,7 +54,7 @@
 }
 
 .promo-glow-dark {
-  background: radial-gradient(circle, rgba(255, 106, 0, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 106, 0, 0.12) 0%, transparent 70%);
   right: -40px;
   top: -40px;
 }
@@ -104,19 +116,53 @@
 .btn-promo-dark,
 .btn-promo-white,
 .btn-promo-outline {
-  background: var(--white);
-  color: var(--secondary);
   font-family: var(--font-montserrat);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 10px 22px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 10px 20px;
   border-radius: var(--radius-sm);
   border: none;
   cursor: pointer;
   width: fit-content;
-  transition: var(--transition);
-  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
+}
+
+.btn-promo-dark {
+  background: var(--dark);
+  color: var(--white);
+}
+
+.btn-promo-dark:hover {
+  background: var(--orange);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-promo-white {
+  background: var(--white);
+  color: var(--dark);
+}
+
+.btn-promo-white:hover {
+  background: var(--dark);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-promo-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid var(--white);
+}
+
+.btn-promo-outline:hover {
+  background: var(--white);
+  color: var(--dark);
+  transform: translateY(-2px);
 }
 
 
@@ -136,7 +182,7 @@
 .promo-img {
   width: 130px;
   height: 120px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: var(--radius-md);
   transition: transform 0.4s ease;
 }

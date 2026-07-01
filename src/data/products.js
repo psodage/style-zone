@@ -25,7 +25,7 @@ export const products = [
     rating: 4.7,
     reviews: 1876,
     category: 'Crocs',
-    image: 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1629813295982-f38b1d7fefc6?w=400&h=300&fit=crop&q=80',
     badge: 'Top Rated',
   },
   {
@@ -39,7 +39,7 @@ export const products = [
     rating: 4.8,
     reviews: 3102,
     category: 'Running Shoes',
-    image: 'https://images.unsplash.com/photo-1539185441755-769473a23570?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&h=300&fit=crop&q=80',
     badge: 'New',
   },
   {
@@ -53,7 +53,7 @@ export const products = [
     rating: 4.5,
     reviews: 892,
     category: 'Flip Flops',
-    image: 'https://images.unsplash.com/photo-1603487742131-4160ec999306?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=300&fit=crop&q=80',
     badge: null,
   },
   {
@@ -67,7 +67,7 @@ export const products = [
     rating: 4.6,
     reviews: 654,
     category: 'Sandals',
-    image: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=400&h=300&fit=crop&q=80',
     badge: null,
   },
   {
@@ -81,7 +81,7 @@ export const products = [
     rating: 4.7,
     reviews: 1245,
     category: 'Supplements',
-    image: 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?w=400&h=300&fit=crop&q=80',
     badge: 'Popular',
   },
   {
@@ -95,7 +95,7 @@ export const products = [
     rating: 4.5,
     reviews: 1120,
     category: 'Running Shoes',
-    image: 'https://images.unsplash.com/photo-1518894781321-630e638d0742?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=400&h=300&fit=crop&q=80',
     badge: null,
   },
   {
@@ -109,7 +109,7 @@ export const products = [
     rating: 4.8,
     reviews: 876,
     category: 'Running Shoes',
-    image: 'https://images.unsplash.com/photo-1556048219-bb6978360b84?w=400&h=300&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1556906781-9a412961c28c?w=400&h=300&fit=crop&q=80',
     badge: 'Premium',
   },
 ];
@@ -126,49 +126,49 @@ export const shopCategories = [
   {
     id: 2,
     name: 'Crocs',
-    image: 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=200&h=160&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1629813295982-f38b1d7fefc6?w=200&h=160&fit=crop&q=80',
     count: 85,
   },
   {
     id: 3,
     name: 'Flip Flops',
-    image: 'https://images.unsplash.com/photo-1603487742131-4160ec999306?w=200&h=160&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=200&h=160&fit=crop&q=80',
     count: 120,
   },
   {
     id: 4,
     name: 'Sandals',
-    image: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=200&h=160&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=200&h=160&fit=crop&q=80',
     count: 96,
   },
   {
     id: 5,
     name: 'Supplements',
-    image: 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=200&h=160&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?w=200&h=160&fit=crop&q=80',
     count: 180,
   },
   {
     id: 6,
     name: 'Apparel',
-    image: 'https://images.unsplash.com/photo-1620188467120-5042ed1eb5da?w=200&h=160&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1483721310020-03333e577078?w=200&h=160&fit=crop&q=80',
     count: 310,
   },
   {
     id: 7,
     name: 'Accessories',
-    image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=200&h=160&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=200&h=160&fit=crop&q=80',
     count: 145,
   },
   {
     id: 8,
     name: 'Socks',
-    image: 'https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=200&h=160&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1582966772680-860e372bb558?w=200&h=160&fit=crop&q=80',
     count: 60,
   },
   {
     id: 9,
     name: 'Nutrition & Energy',
-    image: 'https://images.unsplash.com/photo-1611073615530-51d5c797b672?w=200&h=160&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=200&h=160&fit=crop&q=80',
     count: 95,
   },
 ];

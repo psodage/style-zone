@@ -6,7 +6,7 @@ const supplements = [
     id: 1,
     name: 'PROTEIN',
     desc: 'Build & Recover',
-    image: 'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=200&h=200&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?w=200&h=200&fit=crop&q=80',
     emoji: '🥛',
   },
   {
@@ -20,7 +20,7 @@ const supplements = [
     id: 3,
     name: 'ENERGY GELS',
     desc: 'Instant Energy',
-    image: 'https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=200&h=200&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=200&h=200&fit=crop&q=80',
     emoji: '🔋',
   },
   {
