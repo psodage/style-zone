@@ -1,0 +1,229 @@
+/* ==========================================
+   HERO SECTION STYLES
+   ========================================== */
+
+.hero {
+  position: relative;
+  min-height: 520px;
+  background: var(--dark);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Background - blurred city running scene */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.75) 45%, rgba(10,10,10,0.2) 75%, transparent 100%),
+    linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.6) 100%);
+}
+
+/* Inner Layout */
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Content */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Title */
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 6.5vw, 80px);
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1.0;
+  color: var(--white);
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.hero-title-orange {
+  color: var(--orange);
+  background: linear-gradient(90deg, #FF6A00, #FF8533);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 420px;
+}
+
+.hero-subtitle strong {
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+}
+
+/* Actions */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.btn-hero-primary {
+  background: var(--orange);
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hero-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+
+.btn-hero-primary:hover::before {
+  transform: translateX(100%);
+}
+
+.btn-hero-primary:hover {
+  background: var(--orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 106, 0, 0.5);
+}
+
+.btn-hero-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-hero-primary svg {
+  transition: transform 0.3s;
+}
+
+.btn-hero-outline {
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  border: 2px solid rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: 0.5px;
+}
+
+.btn-hero-outline:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-2px);
+}
+
+/* Spacer for the background runner on the right */
+.hero-spacer {
+  height: 100%;
+  min-height: 400px;
+}
+
+/* Fade-up animation */
+.hero.visible .fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero .fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.hero .fade-up-delay-1 { transition-delay: 0.15s; }
+.hero .fade-up-delay-2 { transition-delay: 0.3s; }
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+  .hero {
+    background-position: 75% center;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 32px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .hero-spacer {
+    display: none;
+  }
+
+  .hero-subtitle {
+    margin: 0 auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: auto;
+    background-position: 80% center;
+  }
+
+  .hero-title {
+    letter-spacing: -1px;
+  }
+
+  .btn-hero-primary, .btn-hero-outline {
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+}

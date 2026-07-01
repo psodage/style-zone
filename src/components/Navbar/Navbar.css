@@ -1,0 +1,364 @@
+/* ==========================================
+   NAVBAR STYLES
+   ========================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+}
+
+/* Top Bar */
+.top-bar {
+  background: var(--dark);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--orange);
+}
+
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+}
+
+.top-bar-left strong {
+  color: var(--orange);
+}
+
+.fire-icon {
+  font-size: 14px;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.top-link {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  transition: color 0.2s;
+  font-weight: 400;
+}
+
+.top-link:hover {
+  color: var(--orange);
+}
+
+/* Main Navbar */
+.navbar {
+  background: var(--secondary);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  gap: 24px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  white-space: nowrap;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--white);
+  background: rgba(255,255,255,0.06);
+}
+
+.nav-link.active {
+  color: var(--orange);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: var(--orange);
+  border-radius: 1px;
+}
+
+.dropdown-arrow {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+/* Nav Actions */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  transition: var(--transition);
+  min-width: 200px;
+}
+
+.search-box.focused {
+  background: rgba(255,255,255,0.12);
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px rgba(255,106,0,0.15);
+  min-width: 240px;
+}
+
+.search-icon {
+  color: rgba(255,255,255,0.5);
+  flex-shrink: 0;
+}
+
+.search-box.focused .search-icon {
+  color: var(--orange);
+}
+
+.search-input {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font);
+  font-size: 13px;
+  color: var(--white);
+  width: 100%;
+}
+
+.search-input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+/* Icon Buttons */
+.nav-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-icon-btn:hover {
+  color: var(--orange);
+}
+
+/* Badge Wrap */
+.nav-icon-badge-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cart Button */
+.nav-cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  padding: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-cart-btn:hover {
+  color: var(--orange);
+}
+
+.nav-cart-btn:hover .nav-cart-total {
+  color: var(--orange);
+}
+
+.nav-cart-total {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  transition: var(--transition);
+}
+
+/* Hamburger */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 1px;
+  transition: var(--transition);
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1100px) {
+  .search-box {
+    min-width: 160px;
+  }
+  .nav-link {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .mobile-toggle {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 108px;
+    left: 0;
+    right: 0;
+    background: var(--secondary);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 999;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links li {
+    width: 100%;
+  }
+  .nav-link {
+    display: block;
+    padding: 12px 24px;
+    border-radius: 0;
+  }
+  .nav-link.active::after {
+    display: none;
+  }
+  .search-box {
+    min-width: 140px;
+  }
+  .cart-total {
+    display: none;
+  }
+  .top-bar-right {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-box {
+    display: none;
+  }
+  .logo-img {
+    height: 36px;
+  }
+}
+

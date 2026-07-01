@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import './index.css';
+
+import Navbar from './components/Navbar/Navbar';
+import HeroSection from './components/HeroSection/HeroSection';
+import FeaturesStrip from './components/FeaturesStrip/FeaturesStrip';
+import CategorySection from './components/CategorySection/CategorySection';
+import PromotionBanners from './components/PromotionBanners/PromotionBanners';
+import BestSelling from './components/BestSelling/BestSelling';
+import StatsSection from './components/StatsSection/StatsSection';
+import BrandsSection from './components/BrandsSection/BrandsSection';
+import SupplementBanner from './components/SupplementBanner/SupplementBanner';
+import Newsletter from './components/Newsletter/Newsletter';
+import Footer from './components/Footer/Footer';
+import useScrollAnimation from './hooks/useScrollAnimation';
 
 function App() {
+  // Initialize scroll animations
+  useScrollAnimation();
+
+  // Re-observe on route/content changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Navbar />
+
+      <main id="main-content">
+        <HeroSection />
+        <FeaturesStrip />
+        <CategorySection />
+        <PromotionBanners />
+        <BestSelling />
+        <StatsSection />
+        <BrandsSection />
+        <SupplementBanner />
+        <Newsletter />
+      </main>
+
+      <Footer />
     </div>
   );
 }

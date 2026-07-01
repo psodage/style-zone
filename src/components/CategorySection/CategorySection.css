@@ -1,0 +1,143 @@
+/* ==========================================
+   CATEGORY SECTION STYLES
+   ========================================== */
+
+.category-section {
+  background: var(--white);
+}
+
+.category-scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.category-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 8px 4px 12px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex: 1;
+}
+
+.category-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card */
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
+  width: 124px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 8px 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--orange);
+}
+
+.category-card:hover .cat-name {
+  color: var(--orange);
+}
+
+.cat-img-wrap {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.category-card:hover .cat-img {
+  transform: scale(1.1);
+}
+
+.cat-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--secondary);
+  text-align: center;
+  transition: color 0.2s;
+  line-height: 1.3;
+}
+
+/* View All Card */
+.view-all-card {
+  color: var(--secondary);
+}
+
+.view-all-img-wrap {
+  color: var(--secondary);
+}
+
+.category-card:hover .view-all-img-wrap {
+  color: var(--orange);
+  transform: scale(1.1);
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+  width: 36px;
+  height: 36px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
+  color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.scroll-btn:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(255, 106, 0, 0.3);
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 768px) {
+  .scroll-btn {
+    display: none;
+  }
+
+  .cat-img-wrap {
+    width: 75px;
+    height: 75px;
+  }
+
+  .category-card {
+    width: 90px;
+  }
+}
